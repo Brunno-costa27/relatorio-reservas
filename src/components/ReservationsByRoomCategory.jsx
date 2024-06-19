@@ -24,7 +24,7 @@ export function ReservationsByRoomCategory() {
                 <thead className="flex text-center text-sm">
                     <tr className="w-full flex justify-center items-center">
                         <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2">Categoria</th>
-                        <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2">Diárias</th>
+                        <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2 ml-6">Diárias</th>
                         <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2">Valor Médio</th>
                         <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2">Valor Total</th>
 

@@ -40,11 +40,11 @@ export function ReservationsByOrigin({t, language, currency, reservationsComplet
 
 
                     <tr className="w-full flex text-center">
-                        <td className="w-full text-left font-bold border-y  border-gray-200  py-2 tracking-tighter">{chave}</td>
-                        <td className="w-[20%] text-center font-normal border-y  border-gray-200  py-2 tracking-tighter text-[12px]">{channel[chave].days}</td>
-                        <td className="w-[40%] text-center font-normal border-y  border-gray-200  py-2 tracking-tighter text-[12px]">{channel[chave].cancelledDays}</td>
-                        <td className="w-[30%] text-right font-normal border-y  border-gray-200  py-2 tracking-tighter text-[12px]">{formatNumberByLanguage(channel[chave].taxTotal, currency, language)}</td>
-                        <td className="w-[30%] text-right font-normal border-y  border-gray-200  py-2 tracking-tighter text-[12px]">{formatNumberByLanguage(channel[chave].bookingValue, currency, language)}</td>
+                        <td className="w-full text-left font-bold border-y  border-gray-200 border-b-0 py-2 tracking-tighter">{chave}</td>
+                        <td className="w-[20%] text-center font-normal border-y  border-gray-200 border-b-0 py-2 tracking-tighter text-[12px]">{channel[chave].days}</td>
+                        <td className="w-[40%] text-center font-normal border-y  border-gray-200 border-b-0 py-2 tracking-tighter text-[12px]">{channel[chave].cancelledDays}</td>
+                        <td className="w-[30%] text-right font-normal border-y  border-gray-200 border-b-0 py-2 tracking-tighter text-[12px]">{formatNumberByLanguage(channel[chave].taxTotal, currency, language)}</td>
+                        <td className="w-[30%] text-right font-normal border-y  border-gray-200 border-b-0 py-2 tracking-tighter text-[12px]">{formatNumberByLanguage(channel[chave].bookingValue, currency, language)}</td>
 
                     </tr>
                         ))

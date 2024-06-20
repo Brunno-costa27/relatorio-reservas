@@ -45,10 +45,10 @@ export function ReservationsByRoomCategory({t, language, currency, reservationsC
 
                             <>
                                 <tr className="w-full flex text-center">
-                                    <td className="w-full text-left font-bold border-y  border-gray-200  py-2">{chave}</td>
-                                    <td className="w-full text-right font-normal border-y  border-gray-200  py-2">{summary[chave].days}</td>
-                                    <td className="w-full text-right font-normal border-y  border-gray-200  py-2">{formatNumberByLanguage(summary[chave].taxTotal, currency, language)}</td>
-                                    <td className="w-full text-right font-normal border-y  border-gray-200  py-2">{formatNumberByLanguage(summary[chave].bookingValue, currency, language)}</td>
+                                    <td className="w-full text-left font-bold border-y border-b-0 border-gray-200  py-2">{chave}</td>
+                                    <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{summary[chave].days}</td>
+                                    <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(summary[chave].taxTotal, currency, language)}</td>
+                                    <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(summary[chave].bookingValue, currency, language)}</td>
                                 </tr>
 
 

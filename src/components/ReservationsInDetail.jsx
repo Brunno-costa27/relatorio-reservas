@@ -45,10 +45,10 @@ export function ReservationsInDetail({t, language, currency, bookings }) {
                         bookings.map((item) => (
                             <>
                                 <tr className="w-full flex text-center" key={item.id}>
-                                    <td className="w-[60%] text-left font-bold border-y  border-gray-200  py-2">#{item.id}</td>
-                                    <td className="w-full text-left font-bold border-y  border-gray-200 px-2 py-2 tracking-tighter text-[12px]">{item.primaryGuest.name}</td>
-                                    <td className="w-full text-center font-normal border-y  border-gray-200 py-2">
-                                        <p className="font-extralight border border-gray-500 rounded-full text-gray-500 text-[10px]">
+                                    <td className="w-[60%] flex justify-start items-center text-left font-bold border-y border-b-0  border-gray-200  py-2">#{item.id}</td>
+                                    <td className="w-full flex items-center text-left font-bold border-y border-b-0  border-gray-200 px-2 py-2 tracking-tighter text-[12px]">{item.primaryGuest.name}</td>
+                                    <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200 py-2">
+                                        <p className="font-extralight border border-gray-500  rounded-full text-gray-500 text-[10px] px-[4px]">
                                            {
                                             item.status === "checkedOut" ? t('checked-out')
                                             : item.status === "cancelled" ? "CANCELADA"
@@ -57,19 +57,19 @@ export function ReservationsInDetail({t, language, currency, bookings }) {
                                             
                                         </p>
                                     </td>
-                                    <td className="w-full text-center font-normal border-y  border-gray-200 px-6 py-2 tracking-tighter">
+                                    <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200 px-6 py-2 tracking-tighter text-[12px]">
                                         {
                                             item.origin === null ? "Direto" : item.origin
                                         }
                                     </td>
-                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">{moment(item.checkIn).format('l')}</td>
-                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">{moment(item.checkOut).format('l')}</td>
+                                    <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200  py-2">{moment(item.checkIn).format('l')}</td>
+                                    <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200  py-2">{moment(item.checkOut).format('l')}</td>
 
-                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">
+                                    <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200  py-2">
                                         {item.roomType.name}
                                     </td>
 
-                                    <td className="w-full text-right font-normal border-y  border-gray-200  py-2">{formatNumberByLanguage(item.values.bookingValue, currency, language)}</td>
+                                    <td className="w-full flex justify-end items-center text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(item.values.bookingValue, currency, language)}</td>
 
                                 </tr>
                             </>

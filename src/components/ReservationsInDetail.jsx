@@ -1,66 +1,80 @@
 import { AiOutlineBars } from "react-icons/ai";
-// import { formatNumberByLanguage } from "../functions/functions"
+import { formatNumberByLanguage, formatNumber } from "../functions/functions"
 import moment from 'moment'
 import 'moment/dist/locale/pt-br'
 // import { useState } from "react";
 
 
 
-export function ReservationsInDetail() {
+export function ReservationsInDetail({t, language, currency, bookings }) {
 
-    // moment.locale(language)
+    moment.locale(language)
 
-    //   console.log(currency);
+    console.log(bookings);
+    // bookings.forEach(item =>{
+    //     console.log(item)
+    // })
 
 
     return (
 
         <>
             <div className="flex justify-start items-start gap-2 py-2 mt-4">
-                <h1 className="text-xl font-bold">Reservas Em Detalhe</h1>
+                <h1 className="text-xl font-bold">{t('reservas-em-detalhe')}</h1>
             </div>
 
             <table className="table-fixed flex flex-col">
                 <thead className="flex text-center text-sm">
                     <tr className="w-full flex justify-center items-center">
-                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">Número</th>
-                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">Nome</th>
-                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">Estado</th>
-                        <th className="w-full text-right     font-bold text-black border-y border-b-0 border-gray-200 py-2">Origem</th>
+                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">{t('numero')}</th>
+                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">{t('nome')}</th>
+                        <th className="w-full text-left font-bold text-black border-y border-b-0 border-gray-200  py-2">{t('estado')}</th>
+                        <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 py-2">{t('origem-0')}</th>
                         <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200 px-4  py-2">In</th>
                         <th className="w-full text-center font-bold text-black border-y border-b-0 border-gray-200 px-4 py-2">Out</th>
-                        <th className="w-full text-center font-bold text-black border-y border-b-0 border-gray-200  py-2">Categoria</th>
-                        <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200  py-2">Total</th>
+                        <th className="w-full text-center font-bold text-black border-y border-b-0 border-gray-200  py-2">{t('categoria-0')}</th>
+                        <th className="w-full text-right font-bold text-black border-y border-b-0 border-gray-200  py-2">{t('total')}</th>
 
 
                     </tr>
                 </thead>
 
                 <tbody className="text-sm">
-                    <tr className="w-full flex text-center">
-                        <td className="w-[60%] text-left font-bold border-y  border-gray-200  py-2">#19043</td>
-                        <td className="w-full text-left font-normal border-y  border-gray-200 px-2 py-2">Fernanda Oliveira</td>
-                        <td className="w-full text-center font-normal border-y  border-gray-200  py-2">
-                            <p className="font-extralight border border-gray-500 rounded-full text-gray-500 text-[10px]">CHECKED OUT</p>
-                        </td>
-                        <td className="w-full text-center font-normal border-y  border-gray-200 px-6 py-2 tracking-tighter">
-                            Idcap Instituto De Desenvolvimento E Capacitaca
-                        </td>
-                        <td className="w-full text-center font-normal border-y  border-gray-200  py-2">12/5/2024</td>
-                        <td className="w-full text-center font-normal border-y  border-gray-200  py-2">30/5/2024</td>
 
-                        <td className="w-full text-center font-normal border-y  border-gray-200  py-2">
-                            Quarto Superior
-                        </td>
+                    {
+                        bookings.map((item) => (
+                            <>
+                                <tr className="w-full flex text-center" key={item.id}>
+                                    <td className="w-[60%] text-left font-bold border-y  border-gray-200  py-2">#{item.id}</td>
+                                    <td className="w-full text-left font-bold border-y  border-gray-200 px-2 py-2 tracking-tighter text-[12px]">{item.primaryGuest.name}</td>
+                                    <td className="w-full text-center font-normal border-y  border-gray-200 py-2">
+                                        <p className="font-extralight border border-gray-500 rounded-full text-gray-500 text-[10px]">
+                                           {
+                                            item.status === "checkedOut" ? t('checked-out')
+                                            : item.status === "cancelled" ? "CANCELADA"
+                                            : ""
+                                           }
+                                            
+                                        </p>
+                                    </td>
+                                    <td className="w-full text-center font-normal border-y  border-gray-200 px-6 py-2 tracking-tighter">
+                                        {
+                                            item.origin === null ? "Direto" : item.origin
+                                        }
+                                    </td>
+                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">{moment(item.checkIn).format('l')}</td>
+                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">{moment(item.checkOut).format('l')}</td>
 
-                        <td className="w-full text-right font-normal border-y  border-gray-200  py-2">R$ 4.302,00</td>
+                                    <td className="w-full text-center font-normal border-y  border-gray-200  py-2">
+                                        {item.roomType.name}
+                                    </td>
 
+                                    <td className="w-full text-right font-normal border-y  border-gray-200  py-2">{formatNumberByLanguage(item.values.bookingValue, currency, language)}</td>
 
-                    </tr>
-
-                    
-
-
+                                </tr>
+                            </>
+                        ))
+                    }
 
 
 

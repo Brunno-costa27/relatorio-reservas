@@ -1,0 +1,30 @@
+{
+  "translation": {
+    "relatorio-de-reservas": "Reservation Report",
+    "cancelamentos": "Cancellations",
+    "numeros-de-diarias-canceladas": "Numbers of Nights Canceled",
+    "reservas-por-categoria-de-quarto": "Reservations By Room Category",
+    "categoria": "Category",
+    "diarias": "Daily",
+    "valor-medio": "Average Value",
+    "valor-total": "Total Value",
+    "reservas-por-origem": "Reserves By Origin",
+    "origem": "Origin",
+    "diarias-0": "Daily",
+    "diarias-canceladas": "Canceled Dailys",
+    "valor-medio-0": "Average Value",
+    "valor-total-0": "Total Value",
+    "reservas-em-detalhe": "Reservations In Detail",
+    "numero": "Number",
+    "nome": "Name",
+    "estado": "State",
+    "origem-0": "Origin",
+    "categoria-0": "Category",
+    "total": "Total",
+    "checked-out": "CHECKED OUT",
+    "numeros-de-diarias-concluidas": "Numbers of Daily Completed",
+    "valor-medio-1": "Average Value",
+    "valor-total-1": "Total value",
+    "reservas-concluidas": "Reservations completed"
+  }
+}

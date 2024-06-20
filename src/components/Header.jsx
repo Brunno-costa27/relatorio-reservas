@@ -2,13 +2,13 @@ import { TbReport } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa6";
 import { BsArrowRight } from "react-icons/bs";
 import { BsCalendar4 } from "react-icons/bs";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import moment from 'moment'
 import 'moment/dist/locale/pt-br'
 
-export function Header() {
+export function Header({t, language}) {
 
-    // moment.locale(language)
+    moment.locale(language)
 
     return (
 
@@ -21,7 +21,7 @@ export function Header() {
                 <div className="flex flex-col px-4">
                     <div className="flex justify-start items-center gap-2">
                         <TbReport size={30}/>
-                        <p className="text-2xl">Relatório de Reservas</p>
+                        <p className="text-2xl">{t('relatorio-de-reservas')}</p>
                     </div>
 
                     <div className="flex justify-start items-start gap-2">

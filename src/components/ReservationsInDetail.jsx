@@ -51,7 +51,7 @@ export function ReservationsInDetail({t, language, currency, bookings }) {
                                         <p className="font-extralight border border-gray-500  rounded-full text-gray-500 text-[10px] px-[4px]">
                                            {
                                             item.status === "checkedOut" ? t('checked-out')
-                                            : item.status === "cancelled" ? "CANCELADA"
+                                            : item.status === "cancelled" ? t('cancelado')
                                             : ""
                                            }
                                             
@@ -66,7 +66,13 @@ export function ReservationsInDetail({t, language, currency, bookings }) {
                                     <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200  py-2">{moment(item.checkOut).format('l')}</td>
 
                                     <td className="w-full flex justify-center items-center text-center font-normal border-y border-b-0 border-gray-200  py-2">
-                                        {item.roomType.name}
+                                        {
+                                            item.roomType.name === 'Quarto Superior' ? t('quarto-superior') 
+                                            : item.roomType.name === 'Quarto Executivo' ? t('quarto-executivo')
+                                            : item.roomType.name === 'Suíte Master Panorâmica' ? t('suite-master-panoramica')
+                                            : item.roomType.name === 'Quarto Executivo com Varanda' ? t('quarto-executivo-com-varanda')
+                                            : t('quarto-executivo-com-varanda')
+                                        }
                                     </td>
 
                                     <td className="w-full flex justify-end items-center text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(item.values.bookingValue, currency, language)}</td>

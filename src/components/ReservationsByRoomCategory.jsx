@@ -45,7 +45,15 @@ export function ReservationsByRoomCategory({t, language, currency, reservationsC
 
                             <>
                                 <tr className="w-full flex text-center">
-                                    <td className="w-full text-left font-bold border-y border-b-0 border-gray-200  py-2">{chave}</td>
+                                    <td className="w-full text-left font-bold border-y border-b-0 border-gray-200  py-2">
+                                        {
+                                            chave === 'Quarto Superior' ? t('quarto-superior') 
+                                            : chave === 'Quarto Executivo' ? t('quarto-executivo')
+                                            : chave === 'Suíte Master Panorâmica' ? t('suite-master-panoramica')
+                                            : chave === 'Quarto Executivo com Varanda' ? t('quarto-executivo-com-varanda')
+                                            : t('quarto-executivo-com-varanda')
+                                        }
+                                    </td>
                                     <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{summary[chave].days}</td>
                                     <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(summary[chave].taxTotal, currency, language)}</td>
                                     <td className="w-full text-right font-normal border-y border-b-0 border-gray-200  py-2">{formatNumberByLanguage(summary[chave].bookingValue, currency, language)}</td>

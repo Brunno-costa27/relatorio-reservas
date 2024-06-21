@@ -18,6 +18,7 @@
     "numero": "Number",
     "nome": "Name",
     "estado": "State",
+    "cancelado": "CANCELLED",
     "origem-0": "Origin",
     "categoria-0": "Category",
     "total": "Total",
@@ -25,6 +26,10 @@
     "numeros-de-diarias-concluidas": "Numbers of Daily Completed",
     "valor-medio-1": "Average Value",
     "valor-total-1": "Total value",
-    "reservas-concluidas": "Reservations completed"
+    "reservas-concluidas": "Reservations completed",
+    "quarto-superior": "Superior room",
+    "quarto-executivo": "Executive room",
+    "suite-master-panoramica": "Panoramic master suite",
+    "quarto-executivo-com-varanda": "Executive room with balcony"
   }
 }

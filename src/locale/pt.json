@@ -20,11 +20,16 @@
     "estado": "Estado",
     "origem-0": "Origem",
     "categoria-0": "Categoria",
+    "cancelado": "CANCELADO",
     "total": "Total",
     "checked-out": "VERIFICADO",
     "numeros-de-diarias-concluidas": "Números de Diárias Concluídas",
     "valor-medio-1": "Valor Médio",
     "valor-total-1": "Valor total",
-    "reservas-concluidas": "Reservas concluídas"
+    "reservas-concluidas": "Reservas concluídas",
+    "quarto-superior": "Quarto Superior",
+    "quarto-executivo": "Quarto Executivo",
+    "suite-master-panoramica": "Suíte Master Panorâmica",
+    "quarto-executivo-com-varanda": "Quarto Executivo Com Varanda"
   }
 }
